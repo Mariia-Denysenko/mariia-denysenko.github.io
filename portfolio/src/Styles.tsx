@@ -10,6 +10,12 @@ const Cantarell = {
   src: `url(${ CantarellFont }) format('truetype')`
 };
 
+
+const colors = {
+  brown: "#b69603",
+  grey: "#888"
+}
+
 export default StyleSheet.create({
   element: {
     display: 'flex',
@@ -37,6 +43,7 @@ export default StyleSheet.create({
     textTransform: "uppercase", 
     marginTop: "12pt",
     letterSpacing: "0.09em",
+    color: colors.grey,
   },
   row: {
     display: 'flex',
@@ -51,14 +58,14 @@ export default StyleSheet.create({
   },
   separatorVertical: {
     display: 'flex',
-    borderRight: "1px solid black",
-    width: 3,
+    borderRight: `2px solid ${colors.brown}`,
+    width: 0,
     margin: "0px 20px", 
     padding: "6pt 0px",
   },
   separatorHorisontal: {
     display: 'flex',
-    borderBottom: "1px solid black",
+    borderBottom: `1pt solid ${colors.brown}`,
     height: 1,
     width: "860px",
     margin: "24pt 0px", 
@@ -80,6 +87,7 @@ export default StyleSheet.create({
     textTransform: "uppercase",
     alignItems: "center",
     paddingBottom: "16pt",
+    color: colors.brown,
   },
 
   skillColumn: {
