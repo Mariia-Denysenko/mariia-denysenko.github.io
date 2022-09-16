@@ -25,18 +25,18 @@ export default StyleSheet.create({
     alignItems: "center",
     flexDirection: "column",
     flexWrap: "wrap",
-    padding: "96pt 0",
+    padding: "45pt 0 45pt 0",
   },
   headingBig: {
-    fontSize: "48pt",
+    fontSize: "24pt",
     textTransform: "uppercase", 
     letterSpacing: "0.09em",
   },
   headingNormal: {
-    fontSize: "34.3pt",
+    fontSize: "16pt",
     textTransform: "uppercase", 
-    marginTop: "26pt",
-    letterSpacing: "0.045em",
+    marginTop: "12pt",
+    letterSpacing: "0.09em",
   },
   row: {
     display: 'flex',
@@ -45,39 +45,41 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   rowLargeText: {
-    fontSize: "23pt",
-    letterSpacing: "4px"
+    fontSize: "11pt",
+    letterSpacing: "2px",
+    paddingBotton: "12pt",
   },
   separatorVertical: {
     display: 'flex',
     borderRight: "1px solid black",
     width: 3,
-    margin: "0px 20pt", 
-    padding: "12pt 0px",
+    margin: "0px 20px", 
+    padding: "6pt 0px",
   },
   separatorHorisontal: {
     display: 'flex',
     borderBottom: "1px solid black",
     height: 1,
-    width: "1410px",
-    margin: "44pt 0px", 
+    width: "860px",
+    margin: "24pt 0px", 
   },
 
   section: {
     justifyContent: "center",
-    width: "1400px",
+    width: "860px",
     alignItems: "center",
-    fontSize: "20pt",
+    fontSize: "10pt",
+    lineHeight: "1.5em",
   },
 
   sectionHeading: {
     fontFamily: [Cantarell, "sans-serif"],
     display: 'flex',
-    fontSize: "34.3pt",
+    fontSize: "16pt",
     letterSpacing: "0.045em",
     textTransform: "uppercase",
     alignItems: "center",
-    padding: "20px 0px",
+    paddingBottom: "16pt",
   },
 
   skillColumn: {
@@ -86,10 +88,11 @@ export default StyleSheet.create({
   
   skillsSection: {
     display: 'flex',
-    width: "1400px",
+    width: "860px",
     flexDirection: "row",
     justifyContent: "center",
-    fontSize: "20pt",
+    fontSize: "11pt",
+    lineHeight: "1.5em",
   }
 
 });
