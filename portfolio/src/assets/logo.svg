@@ -1,0 +1,57 @@
+
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" xmlnsBx="https://boxy-svg.com">
+  <circle cx="250.699" cy="255.677" r="217.476" style="fill: rgb(255, 203, 0);">
+    <title>Background</title>
+  </circle>
+  
+  <g transform="matrix(1.343689, 0, 0, 1.343689, -94.242409, -0.669521)" style="">
+    <title>Full</title>
+    <g style="">
+      <title>Tape Small</title>
+      <circle cx="200.466" cy="144.776" r="7.968" style="fill: rgb(71, 71, 71);">
+        <title>Inner</title>
+      </circle>
+      <circle cx="200.298" cy="144.942" r="32.277" style="fill: rgb(71, 71, 71);">
+        <title>Outer</title>
+      </circle>
+      <circle cx="200.369" cy="144.994" r="10.687" style="fill: none; stroke-width: 3px; stroke: rgb(255, 203, 0);" transform="matrix(0.879083, 0, 0, 0.875628, 24.227955, 18.03319)">
+        <title>Stroke</title>
+      </circle>
+    </g>
+    <g transform="matrix(1.29916, 0, 0, 1.29916, 22.285036, -53.121826)" style="">
+      <title>Tape Big</title>
+      <circle cx="200.466" cy="144.776" r="7.968" style="fill: rgb(71, 71, 71);">
+        <title>Inner</title>
+      </circle>
+      <circle cx="200.298" cy="144.942" r="32.277" style="fill: rgb(71, 71, 71);">
+        <title>Outer</title>
+      </circle>
+      <circle cx="200.369" cy="144.994" r="10.687" style="fill: none; stroke-width: 3px; stroke: rgb(255, 203, 0);" transform="matrix(0.879083, 0, 0, 0.875628, 24.227955, 18.03319)">
+        <title>Stroke</title>
+      </circle>
+    </g>
+    <g style="">
+      <title>Camera</title>
+      <g>
+        <title>Objective</title>
+        <path d="M 367.825 186.785 L 367.825 207.45 L 336.52 207.45 L 367.825 186.785 Z" style="fill: rgb(71, 71, 71);" bxShape="triangle 336.52 186.785 31.305 20.665 1 0 1@f7de6c68"/>
+        <rect x="307.354" y="207.45" width="26.793" height="37.903" style="fill: rgb(71, 71, 71);"/>
+        <path d="M 367.825 -265.888 L 367.825 -245.353 L 336.52 -245.353 L 367.825 -265.888 Z" style="fill: rgb(71, 71, 71);" transform="matrix(1, 0, 0, -1, 0, 0)" bxShape="triangle 336.52 -265.888 31.305 20.535 1 0 1@6575d639"/>
+        <rect x="336.52" y="207.45" width="31.305" height="37.903" style="fill: rgb(74, 71, 69);"/>
+      </g>
+      <g>
+        <title>Body</title>
+        <rect x="179.353" y="183.312" width="116.798" height="86.848" style="stroke-linejoin: round; stroke-linecap: round; stroke-width: 6px; stroke: rgb(71, 71, 71); fill: rgb(71, 71, 71);"/>
+        <rect x="299.128" y="207.45" width="6.499" height="37.903" style="fill: rgb(71, 71, 71);"/>
+      </g>
+      <g>
+        <title>Eye</title>
+        <g>
+          <rect x="144.559" y="192.372" width="30.346" height="19.96" style="fill: rgb(71, 71, 71);"/>
+          <path d="M 144.559 188.38 L 155.108 192.372 L 144.559 192.372 L 144.559 188.38 Z" style="fill: rgb(71, 71, 71);" bxShape="triangle 144.559 188.38 10.549 3.992 0 0 1@22e0140e"/>
+          <path d="M 144.559 -215.78 L 155.021 -212.332 L 144.559 -212.332 L 144.559 -215.78 Z" style="fill: rgb(71, 71, 71);" transform="matrix(1, 0, 0, -1, 0, 0)" bxShape="triangle 144.559 -215.78 10.462 3.448 0 0 1@0c4afc88"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
