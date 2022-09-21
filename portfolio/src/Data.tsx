@@ -1,3 +1,6 @@
+import {v4 as uuidv4} from 'uuid';
+
+const mariia = "Mariia Denysenko";
 
 enum MovieType {
     Short = "short film",
@@ -19,57 +22,83 @@ enum Role {
 }
 
 class Person {
+    id: string = uuidv4();
+    roles: Array<Role>
+    name: string
+    isBoss: boolean = false
 
     constructor(
-        private roles: Array<Role>,
-        private name: string,
-        private isBoss: boolean = false
+        roles: Array<Role>,
+        name: string,
+        isBoss: boolean = false
     ) {
         this.roles = roles;
         this.name = name;
+        this.isBoss = isBoss;
     }
 
 }
 
 class Award {
+    id: string = uuidv4();
+    name: string
 
-    constructor(private name: string) {
+    constructor(name: string) {
         this.name = name;
     }
 
 }
 
 class Movie {
+    name: string
+    type: string
+    startYear: number
+    endYear: number | null
+    crew: Array<Person>
+    awardsWon: Array<Award>
 
     constructor(
-        private name: string,
-        private type: string,
-        private startYear: number,
-        private endYear: number | null,
-        private crew: Array<Person>,
-        private awardsWon: Array<Award> = [],
+        name: string,
+        type: string,
+        startYear: number,
+        endYear: number | null,
+        crew: Array<Person>,
+        awardsWon: Array<Award> = [],
     ) {
         this.name = name;
         this.type = type;
         this.startYear = startYear;
         this.endYear = endYear;
         this.crew = crew;
+        this.awardsWon = awardsWon;
+    }
+
+    mariasRoleIs(roles: Array<Role>): boolean {
+        return roles.some( role => 
+            this.crew
+                .filter((person: Person) => person.name == mariia)
+                .flatMap((person: Person) => person.roles)
+                .includes(role)
+        )
     }
 
 }
 
 class Play {
+    name: string
+    year: number
+    crew: Array<Person>
 
     constructor(
-        private name: string,
-        private year: number,
-        private crew: Array<Person>,
+        name: string,
+        year: number,
+        crew: Array<Person>,
     ) {
         this.name = name;
         this.year = year;
         this.crew = crew;
     }
-
+    
 }
 
 
@@ -80,7 +109,7 @@ var movies = [
         2017, 2017,
         [
             new Person([Role.Director], "Victoria Zchukova"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -89,7 +118,7 @@ var movies = [
         2017, 2017,
         [
             new Person([Role.Director], "Magdalena Jaroszewicz"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -98,7 +127,7 @@ var movies = [
         2017, 2017,
         [
             new Person([Role.Director], "Dmitro Tverdokhlibov"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -107,7 +136,7 @@ var movies = [
         2018, 2018,
         [
             new Person([Role.Director], "Solomiya Tomaschuk"),
-            new Person([Role.CostumeDesigner], "Maria Denysenko"),
+            new Person([Role.CostumeDesigner], mariia),
         ]
     ),
     new Movie(
@@ -117,7 +146,7 @@ var movies = [
         [
             new Person([Role.Director], "Valentin Vasianovych"),
             new Person([Role.ProductionDesigner], "Vlad Odudenko", true),
-            new Person([Role.PropsAssistant], "Maria Denysenko"),
+            new Person([Role.PropsAssistant], mariia),
         ]
     ),
     new Movie(
@@ -127,7 +156,7 @@ var movies = [
         [
             new Person([Role.Director], "Roman Balayan"),
             new Person([Role.ProductionDesigner], "Vlad Odudenko", true),
-            new Person([Role.PropsAssistant], "Maria Denysenko"),
+            new Person([Role.PropsAssistant], mariia),
         ]
     ),
     new Movie(
@@ -136,7 +165,7 @@ var movies = [
         2019, 2019,
         [
             new Person([Role.Director], "Anastasia Tykha", true),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -146,7 +175,7 @@ var movies = [
         [
             new Person([Role.Director], "Olesya Morhuency-Isaenko"),
             new Person([Role.ProductionDesigner], "Vlad Odudenko", true),
-            new Person([Role.ProductionDesignersAssistant], "Maria Denysenko"),
+            new Person([Role.ProductionDesignersAssistant], mariia),
         ]
     ),
     new Movie(
@@ -155,7 +184,7 @@ var movies = [
         2019, 2019,
         [
             new Person([Role.Director], "Vlad Odudenko"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -164,7 +193,7 @@ var movies = [
         2020, 2020,
         [
             new Person([Role.Director], "Maksym Kotskiy"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -187,7 +216,8 @@ var movies = [
         [
             new Person([Role.Director], "Philip Sotnychenko"),
             new Person([Role.ProductionDesigner], "Rita Kulik"),
-            new Person([Role.ProductionDesignersAssistant, Role.PropsMaster], "Maria Denysenko"),
+            new Person([Role.ProductionDesignersAssistant], mariia),
+            new Person([Role.PropsMaster], mariia),
         ],
     ),
     new Movie(
@@ -196,7 +226,7 @@ var movies = [
         2021, 2021,
         [
             new Person([Role.Director], "MIshel Lades"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -205,7 +235,7 @@ var movies = [
         2021, 2021,
         [
             new Person([Role.Director], "Antonio Lukich"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     ),
     new Movie(
@@ -214,7 +244,7 @@ var movies = [
         2022, null,
         [
             new Person([Role.Director], "Oleksiy Daruga"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ],
     ),
     new Movie(
@@ -224,7 +254,7 @@ var movies = [
         [
             new Person([Role.Director], "Pavlo Ostrikov"),
             new Person([Role.ProductionDesigner], "Vlad Odudenko"),
-            new Person([Role.ProductionDesignersAssistant], "Maria Denysenko"),
+            new Person([Role.ProductionDesignersAssistant], mariia),
         ]
     ),
     new Movie(
@@ -233,7 +263,7 @@ var movies = [
         2022, 2022,
         [
             new Person([Role.Director], "Gayane Dzhaginian"),
-            new Person([Role.ProductionDesigner], "Maria Denysenko"),
+            new Person([Role.ProductionDesigner], mariia),
         ]
     )
 ]
@@ -244,7 +274,7 @@ var plays = [
         2017,
         [
             new Person([Role.Director], "Ihor Tikhomyrov"),
-            new Person([Role.CostumeDesigner], "Maria Denysenko"),
+            new Person([Role.CostumeDesigner], mariia),
         ]
     ),
     new Play(
@@ -252,7 +282,7 @@ var plays = [
         2018,
         [
             new Person([Role.Director], "Katheryna Bashkina"),
-            new Person([Role.Scenographer, Role.StageDesigner], "Maria Denysenko"),
+            new Person([Role.Scenographer, Role.StageDesigner], mariia),
         ]
     ),
     new Play(
@@ -260,9 +290,9 @@ var plays = [
         2018,
         [
             new Person([Role.Director], "Ihor Tikhomyrov"),
-            new Person([Role.Scenographer, Role.StageDesigner], "Maria Denysenko"),
+            new Person([Role.Scenographer, Role.StageDesigner], mariia),
         ]
     )
 ]
 
-export { movies, plays }
+export { movies, plays, Movie, Play, Person, Role, Award, MovieType, mariia }

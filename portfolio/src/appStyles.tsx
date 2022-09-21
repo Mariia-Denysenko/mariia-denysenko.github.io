@@ -1,24 +1,17 @@
 
 import { StyleSheet } from 'aphrodite/no-important';
 
-import CantarellFont from './assets/Cantarell-Regular.ttf';
-
-const Cantarell = {
-  fontFamily: "Cantarell",
-  fontStyle: "normal",
-  fontWeight: "normal",
-  src: `url(${ CantarellFont }) format('truetype')`
-};
-
-
-const colors = {
-  brown: "#b69603",
-  grey: "#888"
-}
+import colors from './colors';
+import { Lexend, Cantarell } from './font';
 
 export default StyleSheet.create({
+  lightText: {
+    color: colors.grey,
+  },
   element: {
     display: 'flex',
+    fontFamily: [Lexend, "sans-serif"],
+    fontSize: '13px'
   },
   app: {
     display: 'flex',
@@ -90,6 +83,11 @@ export default StyleSheet.create({
     color: colors.brown,
   },
 
+  text: {
+    fontFamily: [Lexend, "sans-serif"],
+    fontSize: "14px",
+  },
+
   skillColumn: {
     flexGrow: 1
   },
@@ -101,6 +99,18 @@ export default StyleSheet.create({
     justifyContent: "center",
     fontSize: "11pt",
     lineHeight: "1.5em",
-  }
-
+  },
+  educationRow: {
+    display: 'flex',
+    flexDirection: "row",
+  },
+  educationColumn: {
+    display: 'flex',
+    textAlign: "left",
+    flexWrap: "wrap",
+  },
+  columnYear: {
+    width: "200px",
+  },
+  
 });
