@@ -90,7 +90,6 @@ export default StyleSheet.create({
     fontFamily: [Cantarell, "sans-serif"],
     fontSize: "14px",
     color: colors.white
-
   },
 
   skillColumn: {

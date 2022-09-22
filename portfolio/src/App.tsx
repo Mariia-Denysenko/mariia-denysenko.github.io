@@ -4,58 +4,38 @@ import styles from './appStyles';
 import * as data from './Data';
 import Movies from './Movies';
 
+import {
+  createBrowserRouter,
+  BrowserRouter as Router,
+  RouterProvider,
+  Route,
+  Link
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Cv />
+  },
+  {
+    path: "/movie/:id",
+    element: <MoviePage />
+  }
+]);
+
+function MoviePage() {
+  return (
+    <div className={css(styles.element)}>
+      Here will be movie
+    </div>
+  );
+}
+
+
 function App() {
   return (
     <div className={css(styles.app)}>
-
-      <div className={css(styles.header)}>
-        <h1 className={css(styles.headingBig)}>Mariia Denysenko</h1>
-        <h2 className={css(styles.headingNormal)}>Film Production Designer</h2>
-      </div>
-
-      <div className={css(styles.row, styles.rowLargeText)}>
-        <div className={css(styles.element)}>Kineton, Warks CV35 OHN</div>
-        <div className={css(styles.separatorVertical)}>&nbsp;</div>
-        <div className={css(styles.element)}>+07848888943</div>
-        <div className={css(styles.separatorVertical)}>&nbsp;</div>
-        <div className={css(styles.element)}>maria.denysenko88@gmail.com</div>
-      </div>
-
-      <Separator />
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.section)}>
-          <h3 className={css(styles.sectionHeading)}>Profile Summary</h3>
-
-          <div className={css(styles.element, styles.text)}>
-            Passionate and experienced Production Designer with a multifaceted background 
-            in set design for stage productions and film. Adept in communicating with Directors 
-            and other creative professionals to ensure their vision is fulfilled and enhanced 
-            through extraordinary and pertinent set design. Bringing forth a commitment to 
-            creating captivating set design that enhances productions, strengthens characters 
-            with a help of the dramaturgy of the space, and entices viewers. 
-          </div>
-        </div>
-      </div>
-
-      <Separator />
-      <Education />
-      <Separator />
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.section)}>
-          <h3 className={css(styles.sectionHeading)}>Work experience</h3>
-
-          <Movies movies={data.movies} />
-        </div>
-      </div>
-
-      <Separator />
-      <Skills />
-      <Separator />
-      <TechnicalSkills />
-      <Separator />
-    
+      <RouterProvider router={router} />
     </div>
   );
 }
@@ -143,6 +123,58 @@ function TechnicalSkills() {
         Adobe Photoshop, Adobe Illustrator, Adobe InDesign, ProCreate, SketchUp, Blender, Microsoft Word, Microsoft Excel. 
       </div>
     </div>
+  </div>
+}
+
+function Cv() {
+  return <div>
+    <div className={css(styles.header)}>
+      <h1 className={css(styles.headingBig)}>Mariia Denysenko</h1>
+      <h2 className={css(styles.headingNormal)}>Film Production Designer</h2>
+    </div>
+
+    <div className={css(styles.row, styles.rowLargeText)}>
+      <div className={css(styles.element)}>Kineton, Warks CV35 OHN</div>
+      <div className={css(styles.separatorVertical)}>&nbsp;</div>
+      <div className={css(styles.element)}>+07848888943</div>
+      <div className={css(styles.separatorVertical)}>&nbsp;</div>
+      <div className={css(styles.element)}>maria.denysenko88@gmail.com</div>
+    </div>
+
+    <Separator />
+
+    <div className={css(styles.row)} >
+      <div className={css(styles.section)}>
+        <h3 className={css(styles.sectionHeading)}>Profile Summary</h3>
+
+        <div className={css(styles.element, styles.text)}>
+          Passionate and experienced Production Designer with a multifaceted background 
+          in set design for stage productions and film. Adept in communicating with Directors 
+          and other creative professionals to ensure their vision is fulfilled and enhanced 
+          through extraordinary and pertinent set design. Bringing forth a commitment to 
+          creating captivating set design that enhances productions, strengthens characters 
+          with a help of the dramaturgy of the space, and entices viewers. 
+        </div>
+      </div>
+    </div>
+
+    <Separator />
+    <Education />
+    <Separator />
+
+    <div className={css(styles.row)} >
+      <div className={css(styles.section)}>
+        <h3 className={css(styles.sectionHeading)}>Work experience</h3>
+
+        <Movies movies={data.movies} />
+      </div>
+    </div>
+
+    <Separator />
+    <Skills />
+    <Separator />
+    <TechnicalSkills />
+    <Separator />
   </div>
 }
 

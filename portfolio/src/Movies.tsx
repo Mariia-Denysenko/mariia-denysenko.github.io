@@ -6,6 +6,9 @@ import colors from './colors';
 import { Movie, Role, mariia, compareRoles } from './Data';
 import { Lexend } from './font';
 
+import { useNavigate } from "react-router-dom";
+
+
 const styles = StyleSheet.create({
   lightText: {
     color: colors.grey,
@@ -85,6 +88,8 @@ const Movies: React.FC<MyProps> = props => {
     selectedRoles: new Array<Role>(),
   });
 
+  const navigate = useNavigate();
+
   React.useEffect(() => {
     
     const finishLoading = () => {
@@ -152,38 +157,38 @@ const Movies: React.FC<MyProps> = props => {
               .filter( movie => state.selectedRoles.length > 0 ? movie.mariasRoleIs(state.selectedRoles) : true )
               .map(
                 (movie: Movie) =>  
-                <div key={movie.name} className={css(styles.movie)}>
-                  <div className={css(styles.movieYear)}> 
-                    { 
-                      (movie.startYear != movie.endYear) 
-                        ? movie.startYear + ' - ' + ( movie.endYear ? movie.endYear : 'present' )
-                        : movie.startYear 
-                    }
-                  </div>
-                  <div className={css(styles.movieBody)}>
-                    <div className={css(styles.movieRow)}>
-                      <p>{movie.name}</p>&nbsp;<p className={css(styles.lightText)}>({movie.type})</p>
+                    <div key={movie.name} className={css(styles.movie)} onClick={() => navigate(`movie/${movie.name}`)}>
+                      <div className={css(styles.movieYear)}> 
+                        { 
+                          (movie.startYear != movie.endYear) 
+                            ? movie.startYear + ' - ' + ( movie.endYear ? movie.endYear : 'present' )
+                            : movie.startYear 
+                        }
+                      </div>
+                      <div className={css(styles.movieBody)}>
+                        <div className={css(styles.movieRow)}>
+                          <p>{movie.name}</p>&nbsp;<p className={css(styles.lightText)}>({movie.type})</p>
+                        </div>
+                        
+                        {
+                          movie.crew.map(
+                            person => 
+                              <div key={person.id} className={css(styles.movieRow)}>
+                                <p>{person.roles.join("/")}:</p>&nbsp;<p>{person.name}</p>
+                              </div>
+                            )
+                        }
+                        
+                        {
+                          movie.awardsWon.map(
+                            award => 
+                              <div key={award.id} className={css(styles.movieRow)}>
+                                <p className={css(styles.lightText)}>{award.name}</p>
+                              </div>
+                          )
+                        }
+                      </div>
                     </div>
-                    
-                    {
-                      movie.crew.map(
-                        person => 
-                          <div key={person.id} className={css(styles.movieRow)}>
-                            <p>{person.roles.join("/")}:</p>&nbsp;<p>{person.name}</p>
-                          </div>
-                        )
-                    }
-                    
-                    {
-                      movie.awardsWon.map(
-                        award => 
-                          <div key={award.id} className={css(styles.movieRow)}>
-                            <p className={css(styles.lightText)}>{award.name}</p>
-                          </div>
-                      )
-                    }
-                  </div>
-                </div>
             )
           }
         </div>
