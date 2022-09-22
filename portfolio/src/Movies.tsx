@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import colors from './colors';
 
-import { Movie, Role, mariia } from './Data';
+import { Movie, Role, mariia, compareRoles } from './Data';
 import { Lexend } from './font';
 
 const styles = StyleSheet.create({
@@ -11,11 +11,15 @@ const styles = StyleSheet.create({
     color: colors.grey,
   },
   movie: {
+    ":hover": {
+      background: colors.darkdarkGrey,
+    },
     display: 'flex',
     flexDirection: "row",
-    flex: "1 1 50%",
-    padding: "10px 0",
-    
+    flex: "1 1 40%",
+    padding: "10px 10px",
+    color: colors.white,
+    borderRadius: "6px",
   },
   movieBody: {
     display: 'flex',
@@ -35,7 +39,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
-    minHeight: "500px",
     alignContent: "flex-start",
   },
   buttons: {
@@ -45,29 +48,30 @@ const styles = StyleSheet.create({
     flex: 1,
     flexWrap: "wrap",
     margin: "0 0 10px 0",
+    justifyContent: "center",
   },
   buttonPushed: {
-    ":hover": {
-      color: colors.white,
-      backgroundColor: colors.darkGrey,
-    },
-    backgroundColor: colors.grey,
+    backgroundColor: colors.white,
     borderRadius: "3px",
     margin: "0 3px",
-    color: colors.white,
+    color: colors.black,
     textTransform: "capitalize",
   },
   button: {
     ":hover": {
-      color: colors.white,
-      backgroundColor: colors.darkGrey,
+      color: colors.black,
+      backgroundColor: colors.white,
     },
+    color: colors.white,
+    backgroundColor: colors.darkGrey,
     borderRadius: "3px",
     margin: "0 3px",
     textTransform: "capitalize",
+    
   },
   filterElement: {
     padding: "3px 6px",
+    color: colors.white,
   }
 
 })
@@ -124,12 +128,12 @@ const Movies: React.FC<MyProps> = props => {
   return (
     <div>      
         <div className={css(styles.buttons)}>
-          <div className={css(styles.filterElement)}>filter by role:&nbsp;</div>
+
           <div key="all"
                 className={css(styles.filterElement, state.selectedRoles.length == 0 ? styles.buttonPushed : styles.button)}
                 onClick={ () => toggleFilter()}>All</div>
           {
-            roles.sort().map((role: Role) => {
+            roles.sort(compareRoles).map((role: Role) => {
               const buttonStyle = state.selectedRoles.indexOf(role) >= 0
                 ? styles.buttonPushed
                 : styles.button

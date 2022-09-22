@@ -21,6 +21,18 @@ enum Role {
     StageDesigner = "stage designer",
 }
 
+const rolePriority = [
+    Role.ProductionDesigner,
+    Role.ProductionDesignersAssistant,
+    Role.PropsMaster,
+    Role.PropsAssistant,
+    Role.CostumeDesigner,
+]
+
+const compareRoles = (a: Role, b: Role) => {
+    return rolePriority.indexOf(a) - rolePriority.indexOf(b);
+}
+
 class Person {
     id: string = uuidv4();
     roles: Array<Role>
@@ -295,4 +307,4 @@ var plays = [
     )
 ]
 
-export { movies, plays, Movie, Play, Person, Role, Award, MovieType, mariia }
+export { movies, plays, Movie, Play, Person, Role, Award, MovieType, mariia, compareRoles }

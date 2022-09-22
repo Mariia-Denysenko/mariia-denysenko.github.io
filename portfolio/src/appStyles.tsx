@@ -10,13 +10,15 @@ export default StyleSheet.create({
   },
   element: {
     display: 'flex',
-    fontFamily: [Lexend, "sans-serif"],
-    fontSize: '13px'
+    fontFamily: [Cantarell, "sans-serif"],
+    fontSize: '13px',
+    color: colors.white,
   },
   app: {
     display: 'flex',
     flexDirection: "column",
     justifyContent: "center",
+    background: colors.black,
   },
   header: {
     fontFamily: [Cantarell, "sans-serif"],
@@ -30,6 +32,7 @@ export default StyleSheet.create({
     fontSize: "24pt",
     textTransform: "uppercase", 
     letterSpacing: "0.09em",
+    color: colors.white
   },
   headingNormal: {
     fontSize: "16pt",
@@ -84,8 +87,10 @@ export default StyleSheet.create({
   },
 
   text: {
-    fontFamily: [Lexend, "sans-serif"],
+    fontFamily: [Cantarell, "sans-serif"],
     fontSize: "14px",
+    color: colors.white
+
   },
 
   skillColumn: {
@@ -109,8 +114,11 @@ export default StyleSheet.create({
     textAlign: "left",
     flexWrap: "wrap",
   },
+  education: {
+    flex: "1",
+  },
   columnYear: {
-    width: "200px",
+    width: "150px",
   },
   
 });

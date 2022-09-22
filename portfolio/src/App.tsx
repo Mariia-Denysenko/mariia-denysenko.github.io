@@ -18,12 +18,10 @@ function App() {
         <div className={css(styles.separatorVertical)}>&nbsp;</div>
         <div className={css(styles.element)}>+07848888943</div>
         <div className={css(styles.separatorVertical)}>&nbsp;</div>
-        <div className={css(styles.element)}>maria.Denysenko88@gmail.com</div>
+        <div className={css(styles.element)}>maria.denysenko88@gmail.com</div>
       </div>
 
-      <div className={css(styles.row)} >
-        <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
-      </div>
+      <Separator />
 
       <div className={css(styles.row)} >
         <div className={css(styles.section)}>
@@ -40,95 +38,9 @@ function App() {
         </div>
       </div>
 
-      <div className={css(styles.row)} >
-        <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
-      </div>
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.skillsSection)}>
-
-        <div className={css(styles.skillColumn)}>
-            <h3 className={css(styles.sectionHeading)}>Professional skills</h3>
-            
-            <div>
-              <ul>
-                <li className={css(styles.text)}>Design | Sketching</li>
-                <li className={css(styles.text)}>Visual Awareness</li>
-                <li className={css(styles.text)}>Creative</li>
-                <li className={css(styles.text)}>Cinematic Lightning Techniques</li>
-              </ul>
-              <ul>
-                <li className={css(styles.text)}>Interpersonal Skills</li>
-                <li className={css(styles.text)}>Art Directing</li>
-                <li className={css(styles.text)}>Set Design</li>
-                <li className={css(styles.text)}>Visual Storytelling</li>
-                <li className={css(styles.text)}>Critical Thinking</li>
-              </ul>
-            </div>
-          </div>
-
-        <div className={css(styles.skillColumn)}>
-          <h3 className={css(styles.sectionHeading)}>Technical skills</h3>
-          
-          <div>
-            <ul>
-              <li className={css(styles.text)}>Graphic Design</li>
-              <li className={css(styles.text)}>Technical Drawing</li>
-              <li className={css(styles.text)}>Storyboarding</li>
-              <li className={css(styles.text)}>Budget Awareness</li>
-            </ul>
-            <ul>
-              <li className={css(styles.text)}>Spatial Design</li>
-              <li className={css(styles.text)}>Digital Painting</li>
-              <li className={css(styles.text)}>Prop Design & Modelling</li>
-              <li className={css(styles.text)}>Sketching</li>
-            </ul>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
-      </div>
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.section)}>
-          <h3 className={css(styles.sectionHeading)}>Software skills</h3>
-        
-          <div className={css(styles.text)}>
-            Adobe Photoshop, Adobe Illustrator, Adobe InDesign, ProCreate, SketchUp, Blender, Microsoft Word, Microsoft Excel. 
-          </div>
-        </div>
-      </div>
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
-      </div>
-        
-      <div className={css(styles.row)} >
-        <div className={css(styles.section)}>
-          <h3 className={css(styles.sectionHeading)}>Education</h3>
-          <div className={css(styles.educationRow, styles.text)}>
-            <div className={css(styles.educationColumn, styles.columnYear)}>2013 - 2015</div> 
-            <div className={css(styles.educationColumn)}>
-              <p>Kyiv State Institute of Decorative and Applied Art and Design named after Mykhailo Boychuk&nbsp;</p>
-              <p className={css(styles.lightText)}>(Textile Art)</p>
-            </div>
-          </div>
-          <div className={css(styles.educationRow, styles.text)}>
-            <div className={css(styles.educationColumn, styles.columnYear)}>2015 - 2017</div> 
-            <div className={css(styles.educationColumn)}>
-              <p>National Academy of Fine Arts and Architecture Film and Set Design - Bachelor Degree&nbsp;</p>
-              <p className={css(styles.lightText)}>(Film & Set Design)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={css(styles.row)} >
-        <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
-      </div>
+      <Separator />
+      <Education />
+      <Separator />
 
       <div className={css(styles.row)} >
         <div className={css(styles.section)}>
@@ -138,9 +50,100 @@ function App() {
         </div>
       </div>
 
+      <Separator />
+      <Skills />
+      <Separator />
+      <TechnicalSkills />
+      <Separator />
     
     </div>
   );
+}
+
+function Education() {
+  return <div className={css(styles.row)} >
+    <div className={css(styles.section)}>
+      <h3 className={css(styles.sectionHeading)}>Education</h3>
+      <div className={css(styles.educationRow, styles.text)}>
+        <div className={css(styles.educationColumn, styles.columnYear)}>2013 - 2015</div> 
+        <div className={css(styles.educationColumn, styles.education)}>
+          <p>Kyiv State Institute of Decorative and Applied Art and Design named after Mykhailo Boychuk&nbsp;</p>
+          <p className={css(styles.lightText)}>(Textile Art)</p>
+        </div>
+      </div>
+      <div className={css(styles.educationRow, styles.text)}>
+        <div className={css(styles.educationColumn, styles.columnYear)}>2015 - 2017</div> 
+        <div className={css(styles.educationColumn, styles.education)}>
+          <p>National Academy of Fine Arts and Architecture Film and Set Design - Bachelor Degree&nbsp;</p>
+          <p className={css(styles.lightText)}>(Film & Set Design)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+function Separator() {
+  return <div className={css(styles.row)}>
+    <div className={css(styles.separatorHorisontal)}>&nbsp;</div>
+  </div>
+}
+
+function Skills() {
+  return <div className={css(styles.row)} >
+    <div className={css(styles.skillsSection)}>
+
+    <div className={css(styles.skillColumn)}>
+        <h3 className={css(styles.sectionHeading)}>Professional skills</h3>
+        
+        <div>
+          <ul>
+            <li className={css(styles.text)}>Design | Sketching</li>
+            <li className={css(styles.text)}>Visual Awareness</li>
+            <li className={css(styles.text)}>Creative</li>
+            <li className={css(styles.text)}>Cinematic Lightning Techniques</li>
+          </ul>
+          <ul>
+            <li className={css(styles.text)}>Interpersonal Skills</li>
+            <li className={css(styles.text)}>Art Directing</li>
+            <li className={css(styles.text)}>Set Design</li>
+            <li className={css(styles.text)}>Visual Storytelling</li>
+            <li className={css(styles.text)}>Critical Thinking</li>
+          </ul>
+        </div>
+      </div>
+
+    <div className={css(styles.skillColumn)}>
+      <h3 className={css(styles.sectionHeading)}>Technical skills</h3>
+      
+      <div>
+        <ul>
+          <li className={css(styles.text)}>Graphic Design</li>
+          <li className={css(styles.text)}>Technical Drawing</li>
+          <li className={css(styles.text)}>Storyboarding</li>
+          <li className={css(styles.text)}>Budget Awareness</li>
+        </ul>
+        <ul>
+          <li className={css(styles.text)}>Spatial Design</li>
+          <li className={css(styles.text)}>Digital Painting</li>
+          <li className={css(styles.text)}>Prop Design & Modelling</li>
+          <li className={css(styles.text)}>Sketching</li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </div>
+}
+
+function TechnicalSkills() {
+  return <div className={css(styles.row)} >
+    <div className={css(styles.section)}>
+      <h3 className={css(styles.sectionHeading)}>Software skills</h3>
+    
+      <div className={css(styles.text)}>
+        Adobe Photoshop, Adobe Illustrator, Adobe InDesign, ProCreate, SketchUp, Blender, Microsoft Word, Microsoft Excel. 
+      </div>
+    </div>
+  </div>
 }
 
 export default App;
