@@ -157,7 +157,7 @@ const Movies: React.FC<MyProps> = props => {
               .filter( movie => state.selectedRoles.length > 0 ? movie.mariasRoleIs(state.selectedRoles) : true )
               .map(
                 (movie: Movie) =>  
-                    <div key={movie.name} className={css(styles.movie)} onClick={() => navigate(`#/movie/${movie.name}`)}>
+                    <div key={movie.name} className={css(styles.movie)} onClick={() => navigate(`movie/${movie.name}`)}>
                       <div className={css(styles.movieYear)}> 
                         { 
                           (movie.startYear != movie.endYear) 
